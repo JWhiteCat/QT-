@@ -26,7 +26,7 @@ void Dialog1::on_pushButton_2_clicked()
 void Dialog1::on_pushButton_2_clicked()
 {
 
-    srand((unsigned)time(NULL));
+    srand((unsigned)time(NULL));
     for(int i=0;i<2000;i++)
     {
         int a=rand()%(N*N);
