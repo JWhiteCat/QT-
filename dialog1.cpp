@@ -7,6 +7,7 @@ QPushButton *t;
 QString tem;
 const int N=3;
 QPushButton *buttons[N*N];
+int flag=0;
 
 //
 void Swap(QPushButton *button1,QPushButton *button2);
@@ -57,6 +58,7 @@ void Dialog1::on_pushButton_clicked()
 
 void Dialog1::on_pushButton_2_clicked()
 {
+    flag=1;
     int a,i;
     int b[4]={-N,-1,1,N};
     srand((unsigned)time(NULL));
@@ -152,12 +154,16 @@ bool IsNeighbor(QPushButton *button1,QPushButton *button2)
 
 bool ResultIsOk()
 {
-    for(int i=0;i<N*N;i++)
+    if(flag)
     {
-        if(buttons[i]->text().toInt()!=i+1)
-            return false;
+        for(int i=0;i<N*N;i++)
+        {
+            if(buttons[i]->text().toInt()!=i+1)
+                return false;
+        }
+        return true;
     }
-    return true;
+    return false;
 }
 
 
