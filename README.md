@@ -8,11 +8,10 @@
 
 对于打乱拼图的算法，我一共写出了三种
 第一种：无脑随机，可能会出现无解的情况，且可能性较大。
+
 void Dialog1::on_pushButton_2_clicked()
 {
     srand((unsigned)time(NULL));
-
-
     for(int i=0;i<100;i++)
     {
         int a=rand()%(N*N);
@@ -22,6 +21,7 @@ void Dialog1::on_pushButton_2_clicked()
 }
 
 第二种：随机抽取一块拼图，判断其与空白拼图是否相邻，若相邻，则交换。这种方法在N很大时需要较多的循环次数
+
 void Dialog1::on_pushButton_2_clicked()
 {
     srand((unsigned)time(NULL));
@@ -34,6 +34,7 @@ void Dialog1::on_pushButton_2_clicked()
 }
 
 第三种：空白拼图随机交换一块与之相邻的拼图。仅需要较少的循环次数
+
 void Dialog1::on_pushButton_2_clicked()
 {
     int a,i;
